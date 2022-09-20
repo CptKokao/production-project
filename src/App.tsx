@@ -4,13 +4,12 @@ import { MainPageAsync } from "./pages/MainPage/MainPage.async";
 import './styles/index.scss';
 import { Suspense } from "react";
 import { useTheme } from "./theme/useTheme";
-
+import { classNames } from "./helpers/classNames/classNames";
 
 const App = () => {
     const {theme, toogleTheme} = useTheme();
-
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames('app', {}, [theme])}>
             <button onClick={toogleTheme}>toogleTheme</button>
             <Link to={'/'}>Главная</Link>
             <Link to={'/about'}>О сайте</Link>
