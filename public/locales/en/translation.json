@@ -12,5 +12,7 @@
   "Короткий язык": "En",
   "Войти": "Enter",
   "Прибавить": "Increment",
-  "Вычесть": "Decrement"
+  "Вычесть": "Decrement",
+  "vvedite-parol": "Enter password",
+	"vvedite-username": "Enter username"
 }
