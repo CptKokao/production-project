@@ -20,7 +20,7 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions):webpack.WebpackPlug
     }),
     new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
-    new BundleAnalyzerPlugin({
-        openAnalyzer: false,
-    }),
+    // new BundleAnalyzerPlugin({
+    //     openAnalyzer: false,
+    // }),
 ];
