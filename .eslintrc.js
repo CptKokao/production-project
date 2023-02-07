@@ -50,6 +50,8 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
+        // crlf only for test production
+        'linebreak-style': 'off',
     },
     globals: {
         __IS_DEV__: true,
