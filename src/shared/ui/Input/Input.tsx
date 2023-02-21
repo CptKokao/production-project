@@ -10,7 +10,7 @@ interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string;
     onChange?: (value: string) => void;
-    type: string;
+    type?: string;
     placeholder?: string;
     autofocus?: boolean;
 }
