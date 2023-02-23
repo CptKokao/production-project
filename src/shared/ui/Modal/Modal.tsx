@@ -1,8 +1,8 @@
 import { useTheme } from 'app/providers/ThemeProvider';
 import React, {
-    FC, ReactNode, useCallback, useEffect, useRef, useState,
+    FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -21,23 +21,23 @@ export const Modal:FC<ModalProps> = ({
 }) => {
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timeRef = useRef<ReturnType<typeof setTimeout>>();
+    const timeRef = useRef() as MutableRefObject<any>;
     const { theme } = useTheme();
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
 
     const closeHandler = useCallback(() => {
-        if (isOpen) {
+        if (onClose) {
             setIsClosing(true);
             timeRef.current = setTimeout(() => {
                 onClose();
                 setIsClosing(false);
             }, ANIMATION_DELAY);
         }
-    }, [isOpen, onClose]);
+    }, [onClose]);
 
     const onKeyDownEsc = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {

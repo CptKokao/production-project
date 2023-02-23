@@ -20,7 +20,8 @@ export const createReduxStore = (
     const reducerManager = createReducerManager(rootReducers);
 
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        // @ts-ignore
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({

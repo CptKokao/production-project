@@ -36,7 +36,7 @@ module.exports = {
         'no-unused-vars': 'off',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
-        'react/jsx-props-no-spreading': 'warn',
+        'react/jsx-props-no-spreading': 'off',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
@@ -52,6 +52,7 @@ module.exports = {
         'no-param-reassign': 'off',
         // crlf only for test production
         'linebreak-style': 'off',
+        'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,
