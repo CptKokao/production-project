@@ -1,6 +1,14 @@
 {
+	"gorod": "Город",
+	"otment": "Отменть",
+	"poprobuite-obnovit-stranicu": "Попробуйте обновить страницу",
 	"profil": "Профиль",
+	"proizoshla-oshibka-pri-zagruzke-profilya": "Произошла ошибка при загрузке профиля",
 	"redaktirovat": "Редактировать",
+	"sokhranit": "Сохранить",
+	"vash-vozrast": "Ваш возраст",
 	"vasha-familiya": "Ваша фамилия",
-	"vashe-imya": "Ваше имя"
+	"vashe-imya": "Ваше имя",
+	"vvedite-imya-polzovatelya": "Введите имя пользователя",
+	"vvedite-ssylku-na-avatar": "Введите ссылку на аватар"
 }
