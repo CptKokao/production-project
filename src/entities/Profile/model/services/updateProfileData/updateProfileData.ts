@@ -16,7 +16,6 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
             return rejectWithValue(errors);
         }
         try {
-            console.log(fotmData);
             const response = await extra.api.put<Profile>('/profile', fotmData);
 
             if (!response.data) {
@@ -25,7 +24,6 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
 
             return response.data;
         } catch (e) {
-            console.log(e);
             return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
         }
     },

@@ -5,7 +5,9 @@ import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
-export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions):webpack.WebpackPluginInstance[] => [
+export const buildPlugins = ({
+    paths, isDev, project, apiUrl,
+}: BuildOptions):webpack.WebpackPluginInstance[] => [
     new HtmlWebpackPlugin({
         template: paths.html,
     }),
@@ -18,6 +20,7 @@ export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions):webpack.Web
     new webpack.DefinePlugin({
         __IS_DEV__: JSON.stringify(isDev),
         __API_URL__: JSON.stringify(apiUrl),
+        __PROJECT__: JSON.stringify(project),
     }),
     new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
