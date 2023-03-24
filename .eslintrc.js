@@ -44,7 +44,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
         '@typescript-eslint/no-unused-vars': ['warn'],
-        'max-len': ['error', { code: 120, ignoreComments: true }],
+        'max-len': ['error', { code: 130, ignoreComments: true }],
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
         'react-hooks/rules-of-hooks': 'error',

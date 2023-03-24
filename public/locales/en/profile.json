@@ -1,4 +1,19 @@
 {
+	"dannye-ne-ukazany": "Data not specified",
+	"gorod": "City",
+	"imya-i-familiya-obyazatelny": "First and last name are required",
+	"nekkorektnyi-region": "Incorrect region",
+	"nekorrektnyi-vozrast": "Incorrect age",
+	"otment": "Cancel",
+	"poprobuite-obnovit-stranicu": "Try refreshing the page",
 	"profil": "Profile",
-	"redaktirovat": "Edit"
+	"proizoshla-oshibka-pri-zagruzke-profilya": "An error occurred while loading the profile",
+	"redaktirovat": "Edit",
+	"servernaya-oshibka-pri-sokhranenii": "Server error on save",
+	"sokhranit": "Save",
+	"vash-vozrast": "Your age",
+	"vasha-familiya": "Your last name",
+	"vashe-imya": "your name",
+	"vvedite-imya-polzovatelya": "Enter username",
+	"vvedite-ssylku-na-avatar": "Enter link to avatar"
 }
