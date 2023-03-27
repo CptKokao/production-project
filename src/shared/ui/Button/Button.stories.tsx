@@ -1,4 +1,6 @@
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { Theme } from 'app/providers/ThemeProvider';
 import { themeDecorator } from 'shared/config/storybook/themeDecorator/themeDecorator';
 import Button, { ButtonSize, ButtonTheme } from './Button';
@@ -18,8 +20,8 @@ Primary.args = {
     children: 'Text',
 };
 
-export const Сlear = Template.bind({});
-Сlear.args = {
+export const Clear = Template.bind({});
+Clear.args = {
     children: 'Text',
     theme: ButtonTheme.CLEAR,
 };
@@ -41,15 +43,13 @@ OutlineSizeL.args = {
     children: 'Text',
     theme: ButtonTheme.OUTLINE,
     size: ButtonSize.L,
-
 };
 
-export const OutlineSizeXL = Template.bind({});
-OutlineSizeXL.args = {
+export const OutlineSizeXl = Template.bind({});
+OutlineSizeXl.args = {
     children: 'Text',
     theme: ButtonTheme.OUTLINE,
     size: ButtonSize.XL,
-
 };
 
 export const OutlineDark = Template.bind({});
@@ -59,8 +59,8 @@ OutlineDark.args = {
 };
 OutlineDark.decorators = [themeDecorator(Theme.DARK)];
 
-export const Background = Template.bind({});
-Background.args = {
+export const BackgroundTheme = Template.bind({});
+BackgroundTheme.args = {
     children: 'Text',
     theme: ButtonTheme.BACKGROUND,
 };
@@ -71,8 +71,8 @@ BackgroundInverted.args = {
     theme: ButtonTheme.BACKGROUND_INVERTED,
 };
 
-export const SquareDefaultSizeM = Template.bind({});
-SquareDefaultSizeM.args = {
+export const Square = Template.bind({});
+Square.args = {
     children: '>',
     theme: ButtonTheme.BACKGROUND_INVERTED,
     square: true,
@@ -86,8 +86,8 @@ SquareSizeL.args = {
     size: ButtonSize.L,
 };
 
-export const SquareSizeXL = Template.bind({});
-SquareSizeXL.args = {
+export const SquareSizeXl = Template.bind({});
+SquareSizeXl.args = {
     children: '>',
     theme: ButtonTheme.BACKGROUND_INVERTED,
     square: true,
@@ -97,6 +97,6 @@ SquareSizeXL.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
     children: '>',
-    theme: ButtonTheme.BACKGROUND_INVERTED,
+    theme: ButtonTheme.OUTLINE,
     disabled: true,
 };

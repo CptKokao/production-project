@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { storyDecorator } from 'shared/config/storybook/storeDecorator/storeDecorator';
+import { storeDecorator } from 'shared/config/storybook/storeDecorator/storeDecorator';
 import { themeDecorator } from 'shared/config/storybook/themeDecorator/themeDecorator';
 import ProfilePage from './ProfilePage';
 
@@ -16,8 +16,8 @@ const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [storyDecorator({})];
+Normal.decorators = [storeDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [themeDecorator(Theme.DARK), storyDecorator({})];
+Dark.decorators = [themeDecorator(Theme.DARK), storeDecorator({})];
