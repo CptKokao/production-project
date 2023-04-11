@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { storeDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { ArticleDetails } from './ArticleDetails';
@@ -54,7 +54,7 @@ const article: Article = {
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
+Normal.decorators = [storeDecorator({
     articleDetails: {
         data: article,
     },
@@ -62,7 +62,7 @@ Normal.decorators = [StoreDecorator({
 
 export const Loading = Template.bind({});
 Loading.args = {};
-Loading.decorators = [StoreDecorator({
+Loading.decorators = [storeDecorator({
     articleDetails: {
         isLoading: true,
     },
@@ -70,7 +70,7 @@ Loading.decorators = [StoreDecorator({
 
 export const Error = Template.bind({});
 Error.args = {};
-Error.decorators = [StoreDecorator({
+Error.decorators = [storeDecorator({
     articleDetails: {
         error: 'error',
     },

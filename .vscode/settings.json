@@ -18,6 +18,9 @@
     "typescript",
     "typescriptreact"
   ],
+  
+  // Дефолтный редактор
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
 
   // Форматирование при сохранении файла
   "editor.formatOnSave": true,

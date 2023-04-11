@@ -12,16 +12,17 @@ import {
 } from 'entities/Profile';
 import { useEffect, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
-const reducers: ReducerList = {
+const reducers: ReducersList = {
     profile: profileReducer,
 };
 
@@ -42,11 +43,9 @@ const ProfilePage = () => {
         [ValidateProfileError.SERVER_ERROR]: t('servernaya-oshibka-pri-sokhranenii'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
-        }
-    }, [dispatch]);
+    useInitialEffect(() => {
+        dispatch(fetchProfileData());
+    });
 
     const onChangeFirstname = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
