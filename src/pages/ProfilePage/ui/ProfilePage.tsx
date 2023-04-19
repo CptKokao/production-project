@@ -10,7 +10,7 @@ import {
     profileReducer,
     ValidateProfileError,
 } from 'entities/Profile';
-import { useEffect, useCallback } from 'react';
+import { useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
@@ -20,6 +20,7 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -34,6 +35,7 @@ const ProfilePage = () => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const errors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{id: string}>();
 
     const validateErrorTranslates = {
         [ValidateProfileError.NO_DATA]: t('dannye-ne-ukazany'),
@@ -44,7 +46,9 @@ const ProfilePage = () => {
     };
 
     useInitialEffect(() => {
-        dispatch(fetchProfileData());
+        if (id) {
+            dispatch(fetchProfileData(id));
+        }
     });
 
     const onChangeFirstname = useCallback((value: string) => {

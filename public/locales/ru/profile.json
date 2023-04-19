@@ -5,6 +5,7 @@
 	"nekkorektnyi-region": "Неккоректный регион",
 	"nekorrektnyi-vozrast": "Некорректный возраст",
 	"otment": "Отменть",
+	"otpravit": "Отправить",
 	"poprobuite-obnovit-stranicu": "Попробуйте обновить страницу",
 	"profil": "Профиль",
 	"proizoshla-oshibka-pri-zagruzke-profilya": "Произошла ошибка при загрузке профиля",
@@ -15,5 +16,6 @@
 	"vasha-familiya": "Ваша фамилия",
 	"vashe-imya": "Ваше имя",
 	"vvedite-imya-polzovatelya": "Введите имя пользователя",
-	"vvedite-ssylku-na-avatar": "Введите ссылку на аватар"
+	"vvedite-ssylku-na-avatar": "Введите ссылку на аватар",
+	"vvedite-tekst-kommentariya": "Введите текст комментария"
 }
