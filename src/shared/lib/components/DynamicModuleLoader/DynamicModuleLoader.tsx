@@ -18,16 +18,22 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
     const {
         children,
         reducers,
-        removeAfterUnmount = true,
+        removeAfterUnmount = false,
     } = props;
 
     const dispatch = useDispatch();
     const store = useStore() as ReduxStoreWithManager;
 
     useEffect(() => {
+        const mountedReducers = store.reducerManager.getReducerMap();
+
         Object.entries(reducers).forEach(([name, reducer]) => {
-            store.reducerManager.add(name as StateShemaKey, reducer);
-            dispatch({ type: `@INIT ${name} reducer` });
+            const mounted = mountedReducers[name as StateShemaKey];
+
+            if (!mounted) {
+                store.reducerManager.add(name as StateShemaKey, reducer);
+                dispatch({ type: `@INIT ${name} reducer` });
+            }
         });
 
         return () => {
