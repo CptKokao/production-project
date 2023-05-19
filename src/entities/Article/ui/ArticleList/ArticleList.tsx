@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
@@ -20,7 +21,7 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
     ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('article-details');
     const {
         className,
         articles,
@@ -32,10 +33,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <ArticleListItem
             article={article}
             view={view}
-            className={cls.card}
             key={article.id}
         />
     );
+
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                <Text title={t('stati-ne-naideny')} size={TextSize.L} />
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
