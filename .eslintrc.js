@@ -42,7 +42,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
+        'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'target'] }],
         '@typescript-eslint/no-unused-vars': ['warn'],
         'max-len': ['error', { code: 140, ignoreComments: true }],
         'jsx-a11y/click-events-have-key-events': 'off',
