@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ArticleCodeBlockComponent } from './ArticleCodeBlockComponent';
+import { ArticleBlockType } from '../../model/types/article';
 
 export default {
     title: 'entities/ArticleCodeBlockComponent',
@@ -13,5 +14,10 @@ const Template: ComponentStory<typeof ArticleCodeBlockComponent> = (args) => <Ar
 
 export const Normal = Template.bind({});
 Normal.args = {
+    block: {
+        id: '1',
+        type: ArticleBlockType.CODE,
+        code: 'test',
 
+    },
 };

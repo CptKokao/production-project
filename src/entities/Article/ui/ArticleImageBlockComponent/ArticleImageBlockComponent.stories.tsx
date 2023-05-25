@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ArticleImageBlockComponent } from './ArticleImageBlockComponent';
+import { ArticleBlockType } from '../../model/types/article';
 
 export default {
     title: 'entities/ArticleImageBlockComponent',
@@ -13,5 +14,10 @@ const Template: ComponentStory<typeof ArticleImageBlockComponent> = (args) => <A
 
 export const Normal = Template.bind({});
 Normal.args = {
-
+    block: {
+        id: '1',
+        type: ArticleBlockType.IMAGE,
+        src: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+        title: 'test',
+    },
 };
