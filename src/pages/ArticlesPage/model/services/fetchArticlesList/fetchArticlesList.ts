@@ -42,10 +42,10 @@ export const fetchArticlesList = createAsyncThunk<
                         q: search,
                     },
                 });
-
                 if (!response.data) {
                     throw new Error();
                 }
+                console.log(response.data);
 
                 return response.data;
             } catch (e) {

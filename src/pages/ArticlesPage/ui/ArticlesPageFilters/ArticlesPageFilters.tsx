@@ -75,7 +75,7 @@ const ArticlesPageFilters = (props: ArticlesPageFiltersProps) => {
         dispatch(articlesPageActions.setType(value));
         dispatch(articlesPageActions.setPage(1));
         fetchData();
-    }, [dispatch, debounceFetchData]);
+    }, [dispatch, fetchData]);
 
     useInitialEffect(() => {
         dispatch(initArticlesPage(searchParams));
