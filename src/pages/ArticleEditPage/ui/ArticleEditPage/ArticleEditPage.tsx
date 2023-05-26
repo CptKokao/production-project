@@ -15,7 +15,7 @@ const ArticleEditPage: FC<ArticleEditPageProps> = (props) => {
     const isEdit = Boolean(id);
 
     return (
-        <Page className={classNames(cls.articleEditPage, {}, [className])}>
+        <Page className={classNames('', {}, [className])}>
             {isEdit ? `Edit - ${id}` : 'New'}
         </Page>
     );
