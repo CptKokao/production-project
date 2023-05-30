@@ -19,14 +19,14 @@ interface ArticleListItemProps {
     className?: string;
     article: Article;
     view: ArticleView;
-    target: HTMLAttributeAnchorTarget;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const {
         className, article, view, target,
     } = props;
-    const { t } = useTranslation('article-details');
+    const { t } = useTranslation();
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const views = (
@@ -56,11 +56,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
                     )}
                     <div className={cls.footer}>
-                        <AppLink target={target} to={RoutePath.article_details + article.id}>
+                        <AppLink
+                            target={target}
+                            to={RoutePath.article_details + article.id}
+                        >
                             <Button theme={ButtonTheme.OUTLINE}>
                                 {t('Читать далее...')}
                             </Button>
-
                         </AppLink>
                         {views}
                     </div>
@@ -86,7 +88,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 </div>
                 <Text text={article.title} className={cls.title} />
             </Card>
-
         </AppLink>
     );
 });
