@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'kokao-plugin',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -42,7 +43,10 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'target'] }],
+        'i18next/no-literal-string': ['warn', {
+            markupOnly: true,
+            ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap'],
+        }],
         '@typescript-eslint/no-unused-vars': ['warn'],
         'max-len': ['error', { code: 140, ignoreComments: true }],
         'jsx-a11y/click-events-have-key-events': 'off',
@@ -54,6 +58,7 @@ module.exports = {
         'linebreak-style': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
+        'kokao-plugin/path-checker': 'error',
 
     },
     globals: {
