@@ -45,7 +45,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['warn', {
             markupOnly: true,
-            ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'role'],
+            ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'role', 'as'],
         }],
         '@typescript-eslint/no-unused-vars': ['warn'],
         'max-len': ['error', { code: 140, ignoreComments: true }],
