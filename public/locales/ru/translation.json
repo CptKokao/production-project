@@ -1,8 +1,10 @@
 {
 	"decrement": "decrement",
 	"increment": "increment",
+	"profil": "Профиль",
 	"sozdat-statyu": "Создать статью",
 	"throw error": "throw error",
+	"vyiti": "Выйти",
 	"Введите username": "Введите username",
 	"Введите пароль": "Введите пароль",
 	"Введите текст комментария": "Введите текст комментария",
