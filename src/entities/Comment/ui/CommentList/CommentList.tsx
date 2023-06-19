@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 import cls from './CommentList.module.scss';
@@ -18,16 +19,16 @@ export const CommentList: FC<CommentListProps> = (props: CommentListProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.commentList, {}, [className])}>
+            <VStack gap="16" max className={classNames('', {}, [className])}>
                 <CommentCard isLoading />
                 <CommentCard isLoading />
-            </div>
+            </VStack>
 
         );
     }
 
     return (
-        <div className={classNames(cls.commentList, {}, [className])}>
+        <VStack gap="16" max className={classNames('', {}, [className])}>
             {comments?.length
                 ? (comments.map((comment) => (
                     <CommentCard
@@ -38,6 +39,6 @@ export const CommentList: FC<CommentListProps> = (props: CommentListProps) => {
                     />
                 )))
                 : (<Text title={t('kommentarii-otsutstvuyut')} />)}
-        </div>
+        </VStack>
     );
 };
