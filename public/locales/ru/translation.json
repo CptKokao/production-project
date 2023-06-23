@@ -1,9 +1,12 @@
 {
+	"admin-panel": "Админ панель",
+	"adminka": "Админка",
 	"decrement": "decrement",
 	"increment": "increment",
 	"profil": "Профиль",
 	"sozdat-statyu": "Создать статью",
 	"throw error": "throw error",
+	"u-vas-net-dostupa-k-etoi-stranice": "У вас нет доступа к этой странице",
 	"vyiti": "Выйти",
 	"Введите username": "Введите username",
 	"Введите пароль": "Введите пароль",
