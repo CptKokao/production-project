@@ -2,5 +2,5 @@ export {
     ArticleDetailsPageAsync as ArticleDetailsPage,
 } from './ui/ArticleDetailsPage/ArticleDetailsPage.async';
 
-export { articleDetailsPageSchema } from './model/types';
+export { type articleDetailsPageSchema } from './model/types';
 export { articleDetailsPageReducer } from './model/slices';

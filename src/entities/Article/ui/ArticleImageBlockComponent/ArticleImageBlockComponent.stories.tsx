@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ArticleImageBlockComponent } from './ArticleImageBlockComponent';
-import { ArticleBlockType } from '../../model/types/article';
+import { ArticleBlockType } from '../../model/consts';
 
 export default {
     title: 'entities/ArticleImageBlockComponent',
