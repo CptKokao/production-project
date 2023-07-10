@@ -7,9 +7,13 @@ module.exports = {
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
+        '@storybook/storybook-addon-mock',
     ],
     framework: '@storybook/react',
     core: {
         builder: 'webpack5',
+    },
+    typescript: {
+        reactDocgen: 'react-docgen-typescript-plugin',
     },
 };
