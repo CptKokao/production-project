@@ -38,5 +38,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
         use: ['@svgr/webpack'],
     });
 
+    config.resolve!.alias = { '@': paths.src };
+
     return config;
 };

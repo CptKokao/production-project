@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
-import { themeDecorator } from 'shared/config/storybook/themeDecorator/themeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { themeDecorator } from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import { Text, TextSize, TextTheme } from './Text';
 
 export default {

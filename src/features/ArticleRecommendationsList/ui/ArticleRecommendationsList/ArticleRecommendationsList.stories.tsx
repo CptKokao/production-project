@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { storeDecorator } from 'shared/config/storybook/storeDecorator/storeDecorator';
-import { Article } from 'entities/Article';
+import { storeDecorator } from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import { Article } from '@/entities/Article';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const article: Article = {
