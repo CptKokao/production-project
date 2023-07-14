@@ -10,11 +10,11 @@ export const fetchArticleById = createAsyncThunk<
         'articleDetails/fetchArticleById',
         async (articleId, thunkApi) => {
             const { extra, rejectWithValue } = thunkApi;
-
             try {
-                if (articleId) {
+                if (!articleId) {
                     throw new Error('');
                 }
+                console.log(articleId);
 
                 const response = await extra.api.get<Article>(`/articles/${articleId}`, {
                     params: {

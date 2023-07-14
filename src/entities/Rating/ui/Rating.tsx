@@ -13,6 +13,7 @@ import Button, { ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
 
 interface RatingProps {
+    rate?: number
     className?: string;
     title?: string;
     feedbackTitle?: string;
@@ -29,10 +30,11 @@ export const Rating = memo((props: RatingProps) => {
         hasFeedback,
         onCancel,
         title,
+        rate = 0,
     } = props;
     const { t } = useTranslation();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
     const onSelectStars = useCallback((selectedStarsCount: number) => {
@@ -71,7 +73,7 @@ export const Rating = memo((props: RatingProps) => {
         <Card className={classNames(cls.rating, {}, [className])}>
             <VStack align="center" gap="8">
                 <Text title={title} />
-                <StarRating size={40} onSelect={onSelectStars} />
+                <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
             </VStack>
 
             <BrowserView>
