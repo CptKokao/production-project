@@ -59,7 +59,13 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'kokao-plugin/path-checker': ['error', { alias: '@' }],
-        'kokao-plugin/public-api-imports': ['error', { alias: '@' }],
+        'kokao-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*, **/*.stories.*, **/*.StoreDecorator.tsx'],
+            },
+        ],
 
     },
     globals: {
