@@ -58,7 +58,8 @@ module.exports = {
         'linebreak-style': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'kokao-plugin/path-checker': 'error',
+        'kokao-plugin/path-checker': ['error', { alias: '@' }],
+        'kokao-plugin/public-api-imports': ['error', { alias: '@' }],
 
     },
     globals: {
