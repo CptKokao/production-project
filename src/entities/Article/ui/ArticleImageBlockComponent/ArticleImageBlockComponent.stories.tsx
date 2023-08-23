@@ -3,7 +3,7 @@ import { ArticleImageBlockComponent } from './ArticleImageBlockComponent';
 import { ArticleBlockType } from '../../model/consts';
 
 export default {
-    title: 'entities/ArticleImageBlockComponent',
+    title: 'entities/Article/ArticleImageBlockComponent',
     component: ArticleImageBlockComponent,
     argTypes: {
         backgroundColor: { control: 'color' },

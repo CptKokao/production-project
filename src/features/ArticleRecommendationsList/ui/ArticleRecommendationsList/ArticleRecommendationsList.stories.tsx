@@ -33,7 +33,7 @@ Normal.decorators = [storeDecorator({})];
 Normal.parameters = {
     mockData: [
         {
-            url: 'https://jsonplaceholder.typicode.com/todos/1',
+            url: `${__API_URL__}/articles?_limit=3`,
             method: 'GET',
             status: 404,
             response: [
