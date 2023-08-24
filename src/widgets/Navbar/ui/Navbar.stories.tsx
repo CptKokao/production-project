@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { storeDecorator } from '@/shared/config/storybook/storeDecorator/storeDecorator';
 
 import { themeDecorator } from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import { Navbar } from './Navbar';
+import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'widgets/Navbar',
