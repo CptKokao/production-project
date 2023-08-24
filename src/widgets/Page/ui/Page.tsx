@@ -6,10 +6,10 @@ import { useSelector } from 'react-redux';
 import { getScrollByPath, scrollSaveActions } from '@/features/ScrollSave';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { useInitialEffect } from '../../shared/lib/hooks/useInitialEffect';
-import { useAppDispatch } from '../../shared/lib/hooks/useAppDispatch';
-import { useInfiniteScroll } from '../../shared/lib/hooks/useInfiniteScroll';
-import { useThrottle } from '../../shared/lib/hooks/useThrottle';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle';
 import cls from './Page.module.scss';
 
 interface PageProps {
