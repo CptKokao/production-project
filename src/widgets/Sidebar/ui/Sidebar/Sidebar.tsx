@@ -1,5 +1,4 @@
 import { memo, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import Button, { ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
