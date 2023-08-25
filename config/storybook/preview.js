@@ -1,9 +1,11 @@
 import { addDecorator } from '@storybook/react';
-import { styleDecorator } from '../../src/shared/config/storybook/styleDecorator/styleDecorator.ts';
-import { themeDecorator } from '../../src/shared/config/storybook/themeDecorator/themeDecorator.tsx';
-import { routerDecorator } from '../../src/shared/config/storybook/routerDecorator/routerDecorator.tsx';
-import { suspenseDecorator } from '../../src/shared/config/storybook/suspenseDecorator/suspenseDecorator.tsx';
-import { Theme } from '../../src/app/providers/ThemeProvider';
+import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
+import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
+import {
+    SuspenseDecorator,
+} from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
+import { Theme } from '../../src/shared/const/theme';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -13,9 +15,18 @@ export const parameters = {
             date: /Date$/,
         },
     },
+    layout: 'fullscreen',
+    themes: {
+        default: 'light',
+        list: [
+            { name: 'light', class: ['app', Theme.LIGHT], color: '#ffffff' },
+            { name: 'dark', class: ['app', Theme.DARK], color: '#000000' },
+            { name: 'orange', class: ['app', Theme.ORANGE], color: '#ffb005' },
+        ],
+    },
 };
 
-addDecorator(styleDecorator);
-addDecorator(themeDecorator(Theme.LIGHT));
-addDecorator(routerDecorator);
-addDecorator(suspenseDecorator);
+addDecorator(StyleDecorator);
+addDecorator(ThemeDecorator(Theme.LIGHT));
+addDecorator(RouterDecorator);
+addDecorator(SuspenseDecorator);
