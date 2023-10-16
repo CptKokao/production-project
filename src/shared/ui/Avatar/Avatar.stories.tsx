@@ -1,6 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Avatar from './Avatar';
-import AvatarImg from './avatar-storybook.jpg';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Avatar } from './Avatar';
+import AvatarImg from './storybook.jpg';
 
 export default {
     title: 'shared/Avatar',
@@ -17,8 +18,9 @@ Primary.args = {
     size: 150,
     src: AvatarImg,
 };
+
 export const Small = Template.bind({});
-Primary.args = {
+Small.args = {
     size: 50,
     src: AvatarImg,
 };
