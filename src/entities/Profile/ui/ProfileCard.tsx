@@ -4,7 +4,7 @@ import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/Input/Input';
 import { Loader } from '@/shared/ui/Loader/Loader';
-import Avatar from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
 import { HStack, VStack } from '@/shared/ui/Stack';

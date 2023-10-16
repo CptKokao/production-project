@@ -11,8 +11,9 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle';
 import cls from './Page.module.scss';
+import { TestProps } from '@/shared/types/tests';
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
@@ -53,6 +54,7 @@ export const Page = memo((props: PageProps) => {
             className={classNames(cls.Page, {}, [className])}
             onScroll={onScroll}
             id={PAGE_ID}
+            data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
