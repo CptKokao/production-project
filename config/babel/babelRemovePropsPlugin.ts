@@ -11,6 +11,7 @@ export default function (): PluginItem {
                         const nodeName = current.node.name;
 
                         if (forbidden.includes(nodeName)) {
+                            // @ts-ignore
                             current.parentPath.remove();
                         }
                     },
