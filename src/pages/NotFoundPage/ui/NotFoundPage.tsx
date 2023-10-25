@@ -6,7 +6,9 @@ const NotFoundPage = () => {
     const { t } = useTranslation();
 
     return (
-        <Page data-testid="NotFoundPage" className={cls.NotFoundPage}>{t('Страница не найдена')}</Page>
+        <Page data-testid="NotFoundPage" className={cls.NotFoundPage}>
+            {t('Страница не найдена')}
+        </Page>
     );
 };
 

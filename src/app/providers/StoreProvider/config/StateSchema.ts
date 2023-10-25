@@ -1,5 +1,9 @@
 import {
-    EnhancedStore, AnyAction, Reducer, ReducersMapObject, CombinedState,
+    EnhancedStore,
+    AnyAction,
+    Reducer,
+    ReducersMapObject,
+    CombinedState,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from '@/entities/Article';
@@ -33,19 +37,22 @@ export type MountedReducers = OptionalRecord<StateShemaKey, boolean>;
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
-    reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
+    reduce: (
+        state: StateSchema,
+        action: AnyAction,
+    ) => CombinedState<StateSchema>;
     add: (key: StateShemaKey, reducer: Reducer) => void;
     remove: (key: StateShemaKey) => void;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-    reducerManager: ReducerManager
+    reducerManager: ReducerManager;
 }
 export interface ThunkExtraArg {
-    api: AxiosInstance
+    api: AxiosInstance;
 }
 export interface ThunkConfig<T> {
-    rejectValue: T,
-    extra: ThunkExtraArg,
-    state: StateSchema
+    rejectValue: T;
+    extra: ThunkExtraArg;
+    state: StateSchema;
 }

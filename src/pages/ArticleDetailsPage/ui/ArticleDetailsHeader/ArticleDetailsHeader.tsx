@@ -7,10 +7,13 @@ import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
 import { getArticleDetailsData } from '@/entities/Article';
 import cls from './ArticleDetailsHeader.module.scss';
 import { getCanEditArticle } from '../../model/selectors/article';
-import { getRouteArticleDetails, getRouteArticles } from '@/shared/const/router';
+import {
+    getRouteArticleDetails,
+    getRouteArticles,
+} from '@/shared/const/router';
 
 interface ArticleDetailsHeaderProps {
-   className?: string;
+    className?: string;
 }
 
 export const ArticleDetailsHeader: FC<ArticleDetailsHeaderProps> = (props) => {

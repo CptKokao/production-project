@@ -1,9 +1,7 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import {
-    getUserAuthData,
-} from '@/entities/User';
+import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
@@ -16,7 +14,7 @@ import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
-    className?: string
+    className?: string;
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
@@ -48,11 +46,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     {t('sozdat-statyu')}
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
-
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
-
             </header>
         );
     }
@@ -70,7 +66,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             {isAuthModal && (
                 <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
-
         </header>
     );
 });

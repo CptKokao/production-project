@@ -10,7 +10,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleCodeBlockComponent>;
 
-const Template: ComponentStory<typeof ArticleCodeBlockComponent> = (args) => <ArticleCodeBlockComponent {...args} />;
+const Template: ComponentStory<typeof ArticleCodeBlockComponent> = (args) => (
+    <ArticleCodeBlockComponent {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
@@ -18,6 +20,5 @@ Normal.args = {
         id: '1',
         type: ArticleBlockType.CODE,
         code: 'test',
-
     },
 };

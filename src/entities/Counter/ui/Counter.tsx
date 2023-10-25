@@ -8,7 +8,7 @@ import { counterActions } from '../model/slice/counterSlice';
 import cls from './Counter.module.scss';
 
 interface CounterProps {
-    className?: string
+    className?: string;
 }
 
 export const Counter = ({ className }: CounterProps) => {

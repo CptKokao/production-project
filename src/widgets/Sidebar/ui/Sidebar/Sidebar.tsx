@@ -11,7 +11,7 @@ import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 
 interface SidebarProps {
-  className?: string;
+    className?: string;
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
@@ -22,13 +22,17 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         setCollapsed((prev) => !prev);
     };
 
-    const itemList = useMemo(() => sidebarItemList.map((item) => (
-        <SidebarItem
-            item={item}
-            collapsed={collapsed}
-            key={item.path}
-        />
-    )), [collapsed, sidebarItemList]);
+    const itemList = useMemo(
+        () =>
+            sidebarItemList.map((item) => (
+                <SidebarItem
+                    item={item}
+                    collapsed={collapsed}
+                    key={item.path}
+                />
+            )),
+        [collapsed, sidebarItemList],
+    );
 
     return (
         <section

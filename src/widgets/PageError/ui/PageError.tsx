@@ -18,11 +18,7 @@ export const PageError = ({ className }: LangSwitcherProps) => {
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
             <p>{t('Произошла непредвиденная ошибка')}</p>
-            <Button
-                onClick={relaoadPage}
-            >
-                {t('Перезагрузить страницу')}
-            </Button>
+            <Button onClick={relaoadPage}>{t('Перезагрузить страницу')}</Button>
         </div>
     );
 };

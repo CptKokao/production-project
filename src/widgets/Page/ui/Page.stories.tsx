@@ -12,7 +12,9 @@ export default {
     },
 } as ComponentMeta<typeof Page>;
 
-const Template: ComponentStory<typeof Page> = (args) => <Page {...args}>Test</Page>;
+const Template: ComponentStory<typeof Page> = (args) => (
+    <Page {...args}>Test</Page>
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

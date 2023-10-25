@@ -15,14 +15,20 @@ interface AppLinksProps extends LinkProps {
     children: ReactNode;
 }
 
-export const AppLink = memo(({
-    className, children, to, theme = AppLinkTheme.PRIMARY, ...otherProps
-}: AppLinksProps) => (
-    <Link
-        to={to}
-        className={classNames(cls.AppLink, {}, [className, cls[theme]])}
-        {...otherProps}
-    >
-        {children}
-    </Link>
-));
+export const AppLink = memo(
+    ({
+        className,
+        children,
+        to,
+        theme = AppLinkTheme.PRIMARY,
+        ...otherProps
+    }: AppLinksProps) => (
+        <Link
+            to={to}
+            className={classNames(cls.AppLink, {}, [className, cls[theme]])}
+            {...otherProps}
+        >
+            {children}
+        </Link>
+    ),
+);

@@ -1,11 +1,14 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
-import { ReduxStoreWithManager, StateShemaKey } from '@/app/providers/StoreProvider';
+import {
+    ReduxStoreWithManager,
+    StateShemaKey,
+} from '@/app/providers/StoreProvider';
 
 export type ReducersList = {
     [name in StateShemaKey]?: Reducer;
-}
+};
 
 interface DynamicModuleLoaderProps {
     reducers: ReducersList;
@@ -14,11 +17,7 @@ interface DynamicModuleLoaderProps {
 }
 
 export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
-    const {
-        children,
-        reducers,
-        removeAfterUnmount = false,
-    } = props;
+    const { children, reducers, removeAfterUnmount = false } = props;
 
     const dispatch = useDispatch();
     const store = useStore() as ReduxStoreWithManager;
@@ -44,7 +43,7 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
             }
         };
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

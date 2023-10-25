@@ -8,9 +8,9 @@ import { CommentCard } from '../CommentCard/CommentCard';
 import cls from './CommentList.module.scss';
 
 interface CommentListProps {
-   className?: string;
-   comments?: Comment[];
-   isLoading?: boolean;
+    className?: string;
+    comments?: Comment[];
+    isLoading?: boolean;
 }
 
 export const CommentList: FC<CommentListProps> = (props: CommentListProps) => {
@@ -23,22 +23,23 @@ export const CommentList: FC<CommentListProps> = (props: CommentListProps) => {
                 <CommentCard isLoading />
                 <CommentCard isLoading />
             </VStack>
-
         );
     }
 
     return (
         <VStack gap="16" max className={classNames('', {}, [className])}>
-            {comments?.length
-                ? (comments.map((comment) => (
+            {comments?.length ? (
+                comments.map((comment) => (
                     <CommentCard
                         isLoading={isLoading}
                         className={cls.comment}
                         comment={comment}
                         key={comment.id}
                     />
-                )))
-                : (<Text title={t('kommentarii-otsutstvuyut')} />)}
+                ))
+            ) : (
+                <Text title={t('kommentarii-otsutstvuyut')} />
+            )}
         </VStack>
     );
 };
