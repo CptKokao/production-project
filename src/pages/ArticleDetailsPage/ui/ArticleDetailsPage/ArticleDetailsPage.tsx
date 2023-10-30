@@ -18,6 +18,7 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/ArticleRating';
+import { getFeatureFlags } from '@/shared/features';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -31,6 +32,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { className } = props;
     const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
+    const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled')
     const dispatch = useAppDispatch();
 
     useInitialEffect(() => {
@@ -41,6 +43,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     if (!id) {
         return null;
     }
+    console.log(isArticleRatingEnabled)
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -49,7 +52,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             >
                 <ArticleDetailsHeader />
                 <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
+                {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                 <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>
