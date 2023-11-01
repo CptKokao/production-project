@@ -5,13 +5,13 @@ import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
 
 interface useThemeProps {
     theme?: Theme;
-    toogleTheme?: () => void;
+    toogleTheme: (saveAction?:(theme: Theme) => void) => void;
 }
 
 export const useTheme = (): useThemeProps => {
     const { theme, setTheme } = useContext(ThemeContext);
 
-    const toogleTheme = () => {
+    const toogleTheme = (saveAction?:(theme: Theme) => void) => {
         let newTheme: Theme;
 
         switch (theme) {
@@ -29,7 +29,8 @@ export const useTheme = (): useThemeProps => {
         }
 
         setTheme?.(newTheme);
-        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+        saveAction?.(newTheme);
+        // localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
     return {
