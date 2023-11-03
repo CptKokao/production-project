@@ -10,3 +10,4 @@ export {
     isUserManager,
     getUserRoles,
 } from './model/selectors/roleSelectors';
+export { initAuthData } from './model/services/initAuthData';

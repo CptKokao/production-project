@@ -4,6 +4,7 @@ import { User, UserSchema } from '../types/user';
 import { saveJsonSettings } from '../services/saveJsonSettings';
 import { JsonSettings } from '@/shared/types/jsonSettings';
 import { setFeatureFlags } from '@/shared/lib/features';
+import { initAuthData } from '../services/initAuthData';
 
 const initialState: UserSchema = {
     _inited: false,
@@ -15,18 +16,11 @@ export const userSlice = createSlice({
     reducers: {
         setAuthData: (state, action: PayloadAction<User>) => {
             state.authData = action.payload;
-            setFeatureFlags(action.payload.features)
-        },
-        initAuthData: (state) => {
-            const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
-
-            if (user) {
-                const json = JSON.parse(user) as User;
-                state.authData = json;
-                setFeatureFlags(json.features) 
-            }
-
-            state._inited = true;
+            setFeatureFlags(action.payload.features);
+            localStorage.setItem(
+                USER_LOCALSTORAGE_KEY,
+                action.payload.id,
+            );
         },
         logout: (state) => {
             state.authData = undefined;
@@ -34,17 +28,28 @@ export const userSlice = createSlice({
         },
     },
     extraReducers: (builder) => {
-        builder
-
-            .addCase(
-                saveJsonSettings.fulfilled,
-                (state, action: PayloadAction<JsonSettings>) => {
-                    if(state.authData) {
-                        state.authData.jsonSettings = action.payload;
-                    }
-                },
-            )
- 
+        builder.addCase(
+            saveJsonSettings.fulfilled,
+            (state, action: PayloadAction<JsonSettings>) => {
+                if(state.authData) {
+                    state.authData.jsonSettings = action.payload;
+                }
+            },
+        )
+        builder.addCase(
+            initAuthData.fulfilled,
+            (state, action: PayloadAction<User>) => {
+                state.authData = action.payload;
+                state._inited = true;
+                setFeatureFlags(action.payload.features)
+            },
+        )
+        builder.addCase(
+            initAuthData.rejected,
+            (state) => {
+                state._inited = true;
+            },
+        )
     },
 });
 

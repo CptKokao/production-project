@@ -1,7 +1,7 @@
 import { useJsonSettings } from '@/entities/User';
 import { Theme } from '@/shared/const/theme';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
-import { FC, ReactNode, useCallback, useMemo, useState } from 'react';
+import { FC, ReactNode, useEffect, useMemo, useState } from 'react';
 
 interface ThemeProviderProps {
     initialTheme?: Theme;
@@ -9,12 +9,13 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
-    const { theme: defaultTheme = Theme.LIGHT } = useJsonSettings() ;
-    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+    const { theme: defaultTheme } = useJsonSettings() ;
+    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme || Theme.LIGHT);
     const [isThemeInit, setThemeInit] = useState(false);
-     
-    useCallback(() => {
-        if (!isThemeInit) {
+    console.log(defaultTheme)
+    
+    useEffect(() => {
+        if (!isThemeInit && defaultTheme) {
             setTheme(defaultTheme)
             setThemeInit(true)
         }
